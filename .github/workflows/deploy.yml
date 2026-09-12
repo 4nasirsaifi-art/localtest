@@ -20,4 +20,4 @@ jobs:
       - name: build and push image
         run: |
           docker build -t 4nasir/nginx-app:latest .
-          docker push 4nasir/ngnic-app:latest  
+          docker push 4nasir/nginx-app:latest  
