@@ -8,15 +8,16 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: ckeckout code
+        uses: actions/checkout@v4
 
       - name: login Dockerhub
-        uses: docker/login-sction@V3
+        uses: docker/login-action@V3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME}}
           password: ${{secrets.DOCKERHUB_PASSWORD }}
 
-        - name: build and push image
-          run: |
-            docker build -t 4nasir/nginx-app:latest .
-            docker push 4nasir/ngnic-app:latest  
+      - name: build and push image
+        run: |
+          docker build -t 4nasir/nginx-app:latest .
+          docker push 4nasir/ngnic-app:latest  
